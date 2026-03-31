@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DLT Smart Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>🚀 DLT Smart Dashboard</h1>
+  <p>Advanced Blockchain Visualization</p>
+</div>
+
+<div class="main-container">
+
+  <!-- ✅ LEFT SIDEBAR -->
+  <div class="sidebar">
+
+    <h2>📊 Network Analytics</h2>
+
+    <div class="card"><h3>Total Nodes</h3><h2 id="totalNodes">0</h2></div>
+    <div class="card"><h3>Total Blocks</h3><h2 id="totalBlocks">0</h2></div>
+
+    <div class="card"><h3>Valid Nodes</h3><h2 id="validNodes">0</h2></div>
+    <div class="card"><h3>Invalid Nodes</h3><h2 id="invalidNodes">0</h2></div>
+
+    <div class="card"><h3>Valid Blocks</h3><h2 id="validBlocks">0</h2></div>
+    <div class="card"><h3>Hacked Blocks</h3><h2 id="invalidBlocks">0</h2></div>
+
+    <div class="card highlight">
+      <h3>Integrity</h3>
+      <h2 id="percentage">0%</h2>
+    </div>
+
+    <!-- 🔥 GRAPH HERE -->
+    <canvas id="chart"></canvas>
+
+  </div>
+
+  <!-- ✅ RIGHT SIDE (BLOCKCHAIN VIEW) -->
+  <div class="content">
+
+    <div class="controls">
+      <input id="dataInput" placeholder="Enter transaction">
+      <button onclick="addTransaction()">Add</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+
+    <div id="syncStatus" class="sync hidden">
+      🔄 Syncing Network...
+    </div>
+
+    <div id="nodes"></div>
+
+  </div>
+
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
